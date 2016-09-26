@@ -1,7 +1,5 @@
 # Mazi Board Node Server
 
-Node Server for saving the submissions thrown into the letterbox
-
 ## Setup
 
 * go to src directory
