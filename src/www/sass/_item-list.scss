@@ -1,0 +1,74 @@
+.list-view {
+	//@include display(flex);
+	//@include flex-wrap(wrap);
+	//@include justify-content(space-between);
+	//@include column-count(3);
+	width: 100%;
+	margin: $card-margin;
+	
+
+	.item-view {
+		//position: relative;
+		//display:inline-box;
+		//float:left;
+		width:33.3%;
+		margin:0;
+		padding: $card-margin;
+		cursor: pointer;
+
+		@include media($tablet) {
+			width: 50%;
+		}
+
+		@include media($mobile) {
+			width: 100%;
+		}
+
+		.inner-card {
+			background-color: $card-color;
+		}
+	}
+
+	.card-image {
+		overflow: hidden;
+		margin: $text-padding;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.card-header {
+		padding: 1px $text-padding 1px $text-padding;
+	}
+
+	.card-text {
+		padding: $text-padding;
+		font-size: 150%;
+  		text-align:center;
+  		font-weight: bold;
+
+  		p::before {
+			content: "»";
+		}
+
+		p::after {
+			content: "«";
+		}
+	}
+
+	.card-comments {
+		padding: $text-padding;
+	}
+
+	.card-bottom {
+		padding: $text-padding;
+		width:100%;
+		text-align: center;
+		font-size: $small-font-size;
+	}
+}
+
+.more-button-div {
+	text-align:center;
+}

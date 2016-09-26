@@ -1,0 +1,50 @@
+<div class="admin-element">
+	<span class="label">Id</span><p><%= _id %></p>
+</div>
+<div class="admin-buttons">
+	<span class="button small" id="delete-submission-button">Delete Submission</span>
+</div>
+
+<% if (files.length > 0) { %>
+<div class="admin-image">
+	<img src="<%= filesUrl+files[0].name %>">
+</div>
+<% } %>
+<div class="admin-element">
+	<span class="label">Text</span><p><%= text %></p>
+</div>
+<div class="admin-element">
+	<span class="label">Author</span><p><%= author %></p>
+</div>
+<div class="admin-element"><span class="label">Posted</span><p><%= formatDate(createdAt) %></p></div>
+<% if (tags.length > 0) { %>
+<div class="admin-element">
+	<span class="label">Tags</span><p>
+	<ul class="admin-tags">
+	<% _.each(tags, function(tag) { %>
+		<li><%= tag %></li>
+	<% }) %>
+	</ul>
+</p>
+</div>
+<% } %>
+
+<div class="admin-comments">
+	<span class="expand-button" id="admin-expand-button">Comments(<%= comments.length %>)</span><p></p>
+	<ul id="admin-comments-list" class="hidden">
+		<% _.each(comments, function(comment) { %>
+			<li>
+				<b><%= comment.author %></b>
+				<p><%= comment.text %></p>
+				<p class="date">
+					<%= formatDate(comment.createdAt) %>
+				</p>
+				<p><span class="button small" data-id="<%= comment._id %>" id="delete-comment-button">Delete Comment</span></p>
+			</li>
+		<% }) %>
+	</ul>
+</div>
+
+
+
+

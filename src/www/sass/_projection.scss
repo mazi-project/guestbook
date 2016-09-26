@@ -1,0 +1,47 @@
+/*
+* @Author: Lutz Reiter, Design Research Lab, Universität der Künste Berlin
+* @Date:   2016-07-14 12:17:07
+* @Last Modified by:   lutzer
+* @Last Modified time: 2016-07-14 16:25:19
+*/
+
+body.projection {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.projection {
+
+	.background {
+		position: fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index: 1;
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+
+		&.invert {
+			margin-top:20%;
+			@include filter(invert(100%));
+		}
+	}
+
+	.foreground {
+		position: fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index: 2;
+
+		.text {
+			margin: $text-padding;
+			font-size: 200%;
+		}
+	}
+
+}

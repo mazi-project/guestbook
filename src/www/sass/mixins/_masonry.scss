@@ -1,0 +1,82 @@
+/****************************************************\
+  Sass Masonry Mixin
+\****************************************************/
+@mixin masonry($columns: 3, $gap: 2%, $selector: '> *') {
+
+  @if unit($gap) == "rem" {
+    $gap: strip-units($gap) * 16px;
+  }
+  $gapunit: unit($gap);
+
+  // Fallback to inline-blocks and text-align: justify
+  $box-width: 100 / $columns * 1%;
+  $box-width-perc: (100 - (($columns - 1) * $gap)) / $columns;
+  $box-subract: rem( $gap/ ($columns / ($columns - 1)));
+
+  text-align: justify;
+  font-size: 0;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  & #{$selector} {
+
+    @include box-sizing(border-box);
+
+    font-size: 16px;
+    font-size: 1rem;
+
+    vertical-align: top;
+    display: inline-block;
+
+    @if $gapunit == '%' {
+      width: $box-width-perc;
+    } @else {
+      width: calc(#{$box-width} - #{$box-subract});
+    }
+  }
+
+  // Masonry
+  $margins: $gap / 2 * -1;
+  $paddings: ($columns * ($gap/2)) / ((100 + strip-units($gap)) / 100);
+
+  .csscolumns & {
+
+    &:after {
+      content: none;
+    }
+
+    @include column-count($columns);
+
+    @if $gapunit == "%" {
+      @include column-gap(0);
+      margin: {
+        left: $margins;
+        right: $margins;
+      }
+    } @else {
+      @include column-gap($gap);
+    }
+
+    #{$selector} {
+
+      @if $gapunit == '%' {
+        padding: {
+          left: $paddings;
+          right: $paddings;
+        }
+      }
+
+      width: 100%;
+
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      column-break-inside: avoid;
+      break-inside: avoid;
+
+    }
+  }
+}

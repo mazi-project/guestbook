@@ -1,0 +1,10 @@
+@mixin shadow($z-index : 0) {
+
+	@if ($z-index == 1) {
+		@include box-shadow(1px 1px 3px 0px #333333);
+	} @else if($z-index == 0) {
+		@include box-shadow(none);
+	} @else {
+		@include box-shadow(2px 2px 2px 0px #333333);
+	}
+}

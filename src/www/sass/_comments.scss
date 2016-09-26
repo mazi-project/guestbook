@@ -1,0 +1,62 @@
+.comment {
+	display: table;
+	padding:1em;
+	width: 100%;
+
+	&.new {
+		width:100%;
+	}
+
+	.comment-image,
+	.comment-content {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	.comment-image {
+		padding-right: $gutter;
+
+		img {
+			height: 2em;
+			max-width: none;
+		}
+	}
+
+	.comment-content {
+		width:100%;
+		font-size: 110%;
+
+
+		h4 {
+			margin: 0 0 $text-padding 0;
+			float: left;
+		}
+
+		.date {
+			float:right;
+			font-size: 80%;
+		}
+
+		p {
+			clear: both;
+		}
+	}
+
+	textarea#new-comment-text {
+		height:5em;
+	}
+}
+
+.new-comment {
+	background-color: $body-background;
+}	
+
+.button-row {
+	text-align: right;
+}
+
+
+#comment-input {
+	width: 100%;
+	padding:1em;
+}

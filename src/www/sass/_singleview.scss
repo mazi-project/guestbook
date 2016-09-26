@@ -1,0 +1,54 @@
+.singleview {
+	margin: $card-margin*2;
+	background-color: $card-color;
+	padding: $text-padding*2;
+
+
+	h2 {
+		margin: 0 0 $paragraph-padding 0;
+	}
+
+	.singleview-text {
+		font-size: 160%;
+  		overflow: hidden;
+  		text-align: center;
+	}
+
+	.singleview-image {
+		text-align: center;
+		overflow: hidden;
+		margin: $text-padding 0 $text-padding 0;
+		clear: both;
+
+
+		img {
+			max-height:600px;
+			max-width: 100%;
+			border-radius: $border-radius;
+		}
+
+	}
+
+	.singleview-header {
+		text-align: center;
+	}
+
+	.singleview-text {
+		clear:both;
+		padding: $text-padding 0 $text-padding 0;
+	}
+
+	.singleview-comments {
+		padding: $text-padding 0 $text-padding 0;
+	}
+
+	.singleview-bottom {
+		padding: $text-padding 0 $text-padding 0;
+		width:100%;
+
+		.author {
+			float: right;
+			font-style: italic;
+		}
+	}
+}

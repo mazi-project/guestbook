@@ -1,0 +1,42 @@
+#header {
+	//border-bottom: $border-style;
+	//margin: $card-margin;
+
+	.header-bar {
+		width:100%;
+		background-color: #fff;
+		height: 80px;
+	}
+
+	.header-image {
+		width:100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	
+	.link-back {
+		position:fixed;
+		display:block;
+		width:100%;
+		text-align: left;
+		padding: $text-padding;
+		background-color: #fff;
+		border-bottom: $border-style;
+		top:0;
+		left:0;
+		right:0;
+		font-size: 140%;
+	}
+
+	.logo {
+		text-align: center;
+		margin: 40px;
+
+		img {
+			height:60px;
+		}
+	}
+}

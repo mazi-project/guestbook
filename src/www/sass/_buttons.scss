@@ -1,0 +1,58 @@
+.button {
+	display:inline-block;
+	border-radius: $border-radius;
+	background: $button-background;
+	color: $button-text-color;
+	cursor: pointer;
+	padding:  $text-padding $button-padding $text-padding $button-padding;
+	margin: $element-margin 0 $element-margin 0;
+	font-size: 80%;
+	@include shadow(1);
+
+	&:hover {
+		background: $button-background-hover;
+	}
+
+	&:active {
+		background: $button-background-clicked;
+		@include shadow(0);
+	}
+}
+
+.button.small {
+	font-size: 70%;
+	padding:  $text-padding;
+}
+
+.close-button {
+	display:inline-block;
+	width: 40px;
+	height: 40px;
+
+	background: image-url('close-icon.png') no-repeat;
+	background-size: 40px;
+}
+
+.expand-button {
+	font-family: "open-sans";
+	font-style: italic;
+	background: image-url('arrow-down.png') no-repeat;
+	background-size: 24px;
+	background-position: right center;
+	padding-right:28px;
+	margin: $button-padding 0 $button-padding 0;
+	cursor: pointer;
+	font-size: 80%;
+}
+
+
+.header-align-right {
+	height:40px;
+
+	a {
+		float:right;
+	}
+}
+
+
+

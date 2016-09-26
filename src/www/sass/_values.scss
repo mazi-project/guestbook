@@ -1,0 +1,45 @@
+/* Margins & Paddings */
+
+$card-margin: .5em;
+$text-padding: .5em;
+$element-padding: 0.25em;
+$paragraph-padding: 1em;
+$button-padding: 2em;
+$element-margin: 0.5em;
+
+/* Border */
+$border-radius:3px;
+$border-style: 1px solid #aaa;
+$card-border-style: 2px solid #aaa;
+$input-border: 1px solid #aaa;
+//$input-border: 0;
+
+/* Colors */
+$body-background: #eaeaed;
+$box-background: #FFFFFF;
+$card-color: #FFFFFF;
+
+$tag-background: #DDDDDD;
+$tag-text-color: #000000;
+
+$badge-text-color: #000000;
+
+$button-background: #000000;
+$button-text-color: #cacad3;
+$button-background-hover: #3c3c3c;
+$button-background-clicked: #3c3c3c;
+
+$input-background-color: transparent;
+$input-text-color: #000;
+
+/* Font sizes */
+$small-font-size: 80%;
+
+/* Button & Inputs */
+
+/* Responsive */
+$max-width-outer: 1080px;
+$max-width-inner: 900px;
+
+$mobile: new-breakpoint(max-width 600px 4);
+$tablet: new-breakpoint(max-width 900px 4);

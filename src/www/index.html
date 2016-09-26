@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Hybrid Letterbox</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/screen.css">
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="modal-container"></div>
+    <script data-main="js/main" src="libs/require.js"></script>
+    <script>
+      requirejs.config({
+        baseUrl: 'js',
+        paths: {
+            jquery: '../libs/jquery-1.12.3.min',
+            underscore: '../libs/underscore-min',
+            underscoreString: '../libs/underscore.string.min',
+            backbone: '../libs/backbone-min',
+            marionette: '../libs/backbone.marionette.min',
+            backbonePaginator: '../libs/backbone.paginator.min',
+            socketio: '../libs/socket.io.min',
+            text: '../libs/text',
+            masonry: '../libs/masonry.pkgd.min',
+            moment: '../libs/moment',
+            iframeTransport: '../libs/jquery.iframe-transport',
+            moment_en_gb: '../libs/moment-en-gb'
+        }
+    });
+    </script>
+  </body>
+</html>

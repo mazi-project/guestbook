@@ -1,0 +1,74 @@
+body.tablet {
+	background-color: #ffffff;
+}
+
+.tablet-list-view {
+	width: 80%;	
+	margin: $card-margin auto $card-margin auto;
+	
+
+	.item-view {
+		position: relative;
+		display:inline-box;
+		float:left;
+		width:100%;
+		padding-bottom: 2.5em;
+		margin-bottom: $card-margin;
+		overflow: hidden;
+	}
+
+	.card-image {
+		margin: $text-padding;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.card-header {
+
+		padding: $text-padding;
+		margin-bottom: $paragraph-padding;
+
+		.tags {
+
+			
+		}
+
+		.date {
+			float:right;
+			font-size: 80%;
+		}
+	}
+
+	.card-text {
+		padding: $text-padding;
+		font-size: 130%;
+  		overflow: hidden;
+	}
+
+	.card-tags {
+		padding: $text-padding;
+	}
+
+	.card-comments {
+		padding: $text-padding;
+	}
+
+	.card-bottom {
+		position: absolute;
+		bottom: 0;
+		padding: $text-padding;
+		width:100%;
+
+		.author {
+			float: right;
+			font-style: italic;
+		}
+	}
+}
+
+.more-button-div {
+	text-align:center;
+}

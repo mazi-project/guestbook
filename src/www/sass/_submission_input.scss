@@ -1,0 +1,106 @@
+.submission-input {
+	position: relative;
+	margin: $card-margin;
+	clear:both;
+	width: 500px;
+	margin: -50px auto 0 auto;
+
+	@include media($mobile) {
+		margin: -1em auto 0 auto;
+		width:100%;
+	}
+
+	&.expand {
+		max-width: $max-width-inner;
+		width: 90%;
+
+		@include media($mobile) {
+			width:100%;
+		}
+	}
+
+	.submission-headline {
+		padding: $text-padding;
+	}
+
+	h2 {
+		margin: 0;
+	}
+
+	.input-author {
+		display:block;
+		overflow: hidden;
+	}
+
+	.tag-list {
+		text-align: center;
+		width: 100%;
+
+		li {
+			float: none;
+			display: inline-block;
+			padding: $element-padding;
+		}
+	}
+
+	.input-box {
+		margin: $element-margin 0 $element-margin 0;
+		background-color: $box-background;
+
+		textarea {
+			height: 2.4em;
+			resize: none;
+			overflow: hidden;
+			@include transition(height 0.2s);
+		}
+
+		span.input-row {
+			display: block;
+		    //padding-right:$text-padding;
+		}
+
+	}
+
+	.input-extra {
+		display: none;
+	}
+
+	.button-row {
+		display: none;
+		text-align: right;
+
+
+		& > span {
+			margin: $element-padding;
+		}
+	}
+
+	&.expand {
+
+		.input-box {
+
+			textarea {
+				height: 10em;
+			}
+		}
+
+		.input-extra {
+			display: block;
+		}
+
+		.button-row {
+			display: block;
+		}
+
+		.blinking-cursor {
+			visibility: hidden;
+		}
+
+	}
+
+	#attach-text {
+		display:block;
+		padding: $text-padding;
+	}
+
+}

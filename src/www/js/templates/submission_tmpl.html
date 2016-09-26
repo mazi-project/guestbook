@@ -1,0 +1,44 @@
+<div class="header-align-right">
+	<a href="#"><div class="close-button"></div></a>
+</div>
+
+<% if (title) { %>
+	<h1><%= title %></h1>
+<% } %>
+
+<% _.each(files, function(file) { %>
+<div class="singleview-image">
+	<img src="<%= filesUrl+file.name %>">
+</div>
+<% }) %>
+
+<div class="singleview-text">
+	<%= text %>
+</div>
+<div class="singleview-header">
+	<p class="author"><h3><%= author %></h3></p>
+	<p class="date">Posted on <%= formatDate(createdAt) %></p>
+	<ul class="tag-list">
+	<% _.each(tags, function(tag) { %>
+		<li><a href="#/tag/<%= tag %>"><span class="badge"><%= tag %></span></a></li>
+	<% }) %>
+	</ul>
+</div>
+
+<div class="singleview-comments">
+	<h2>Comments</h2>
+	<div class="comments">
+		<% _.each(comments, function(comment) { %>
+			<div class="comment">
+				<div class="comment-content">
+					<h4><%= comment.author %></h4>
+					<div class="date"><%= fromNow(comment.createdAt) %></div>
+					<p><%= comment.text %></p>
+				</div>
+			</div>
+		<% }) %>
+		<div id="comment-input">
+		</div>
+	</div>
+</div>
+

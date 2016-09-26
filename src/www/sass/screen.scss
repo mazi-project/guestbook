@@ -1,0 +1,190 @@
+/* Welcome to Compass.
+* In this file you should write your main styles. (or centralize your imports)
+* Import this file using the following HTML or equivalent:
+* <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+/* MIXINS */
+
+@import "compass/css3/box-shadow";
+
+//@import "mixins/masonry";
+@import "mixins/multiline";
+@import "mixins/shadows";
+
+/* IMPORTS */
+
+@import "values";
+@import "side";
+@import "header";
+@import "footer";
+
+@import "buttons";
+@import "spinner";
+@import "blinking-cursor";
+
+@import "item-list";
+@import "comments";
+@import "submission_input";
+@import "singleview";
+@import "admin";
+@import "tablet-list";
+@import "projection";
+
+/* FONTS */
+
+@include font-face("tititllium", "/fonts/TitilliumWeb-Regular", $file-formats: ttf);
+@include font-face("tititllium", "/fonts/TitilliumWeb-SemiBold", 400, $file-formats: ttf);
+@include font-face("tititllium", "/fonts/TitilliumWeb-Bold", bold, $file-formats: ttf);
+
+/* ELEMENT STYLES */
+
+body {
+	font-family: "tititllium";
+	color: #444;
+	background-color: $body-background;
+	margin:0;
+	padding:0;
+	font-size: 12pt;
+}
+
+h4 {
+	margin: 0;
+}
+
+h3 {
+	text-align: center;
+	font-size: 100%;
+	padding: 0;
+	margin: $text-padding 0 0 0;
+	font-weight: normal;
+}
+
+h2 {
+	margin: 0.2em;
+	font-size: 180%;
+}
+
+h1 {
+	text-align:center;
+	font-size: 260%;
+
+	margin: 0;
+	padding: $text-padding;
+
+	@include media($mobile) {
+		font-size: 160%;
+		padding: $text-padding/2;
+	}
+}
+
+p {
+	margin: 0.2em 0 0.2em 0
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a.link {
+	font-family: 'tititllium';
+	font-size: 80%;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+#{$all-text-inputs} {
+	font-family: 'tititllium';
+	font-size:130%;
+	width: 100%;
+	padding: $text-padding;
+	outline: none;
+	border: 0;
+	background-color: $input-background-color;
+	color: $input-text-color;
+	text-align:center;
+
+	@include placeholder {
+		color: #ccc;
+
+	}
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+	text-align:center;
+	font-size: 160%;
+	font-weight: bold;
+
+	@include media($mobile) {
+		font-size: 120%;
+	}
+}
+
+/* MAIN STYLES */
+
+.hidden {
+	display:none !important;
+}
+
+.tag-list {
+	list-style:none;
+	padding:0;
+	display: inline-block;
+	margin: $paragraph-padding;
+
+	li {
+		float: left;
+		padding: 0;
+	}
+}
+
+.badge {
+	font-family: "tititllium";
+	border-radius: $border-radius;
+	display: inline-block;
+	font-size: $small-font-size;
+	line-height: 1;
+	padding: 0.4em 1.2em;
+	color: $badge-text-color;
+	margin : $element-padding;
+	font-weight: 400;
+	border: $border-style;
+
+	&.selected {
+		background-color: #FF7043 !important; 
+	}
+}
+
+.badge.with-hash::before {
+	content: "#";
+}
+
+.spacer {
+	display:block;
+	width:100%;
+	height:1px;
+}
+
+.line-horizontal {
+	width:100%;
+	border-bottom: $border-style;
+	display:block;
+}
+
+.column {
+	max-width: $max-width-outer;
+	width: 100%;
+	margin: auto;
+}
+
+#content {
+	min-height: 500px;
+}
+
