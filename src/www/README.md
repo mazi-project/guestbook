@@ -1,6 +1,6 @@
-# Hybrid Letterbox Webapp
+# Mazi Board Frontend
 
-This directory contains the javascript backbone app that is run on the Letterbox tablet screen
+This directory contains the frontend javascript backbone web app 
 
 ## Setup
 

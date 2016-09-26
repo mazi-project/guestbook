@@ -1,4 +1,4 @@
-# Hybrid Letterbox Node Server
+# Mazi Board Node Server
 
 Node Server for saving the submissions thrown into the letterbox
 
