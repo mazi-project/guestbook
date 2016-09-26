@@ -1,8 +1,16 @@
 # Mazi Board Node Server
 
+
+
+## Server Requirements
+
+* mongodb installed
+* npm installed
+* node installed
+
 ## Setup
 
-* go to src directory
+* go to src/node directory
 * run `npm install`
 * install pm2 globally : `npm install pm2 -g`
 * `cp config.default.js config.js` and change database credentials and username and password in auth section
