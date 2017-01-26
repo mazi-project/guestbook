@@ -1,11 +1,12 @@
 <div class="input-box">
-	<div class="submission-headline"><h1>Liebe Sonnenallee ... <span class="blinking-cursor">|</span></h1></div>
+	<div class="submission-headline"><h1>DSI Fair 2017 Guest Book... <span class="blinking-cursor">|</span></h1></div>
 	<div class="input-extra">
 		<span class="input-row">
 			<textarea id="new-submission-text" maxlength="1000" placeholder="What do you have to say?"></textarea>
 		</span>
+                <form action="demo_form.asp">
 		<span class="input-row">
-			<span class="input-author"><input id="new-submission-author" maxlength="32" type="text" placeholder="Your Name"></span>
+			<span class="input-author"><input id="new-submission-author" maxlength="32" type="text" placeholder="Your Name" required></span>
 
 			<ul class="tag-list">
 				<% _.each(tags, function(tag) { %>
@@ -17,6 +18,7 @@
 				<% }) %>
 			</ul>
 		</span>
+                </from>
 		<span id="attach-text" class="hidden"></span>
 	</div>
 </div>

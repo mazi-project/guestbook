@@ -234,9 +234,13 @@ define(['exports', 'backbone', 'marionette', 'socketio', 'config', 'views/main_v
 
 				var title = (type + '-error').toUpperCase();
 				var message = error.message;
+                               /*
+				*alert(title + ': ' + message);
+                               */
+                                 alert('Please fill in both the Name and Text fields'); 			
 
-				alert(title + ': ' + message);
-			}
+
+                         }
 		}, {
 			key: 'closeDialog',
 			value: function closeDialog() {}
