@@ -2,10 +2,6 @@
 	<a href="#"><div class="close-button"></div></a>
 </div>
 
-<% if (title != "false") { %>
-	<h1><%= title %></h1>
-<% } %>
-
 <% _.each(files, function(file) { %>
 <div class="singleview-image">
 	<img src="<%= filesUrl+file.name %>">
