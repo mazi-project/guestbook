@@ -1,7 +1,7 @@
 node_modules
 *.db
 public/.sass-cache
-_tmp/
+_tmp/*
 !_tmp/.keep
 *.log
 config.js
