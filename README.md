@@ -1,7 +1,4 @@
-# Mazi Board Node Server
-
-
-
+# MAZI Guest Book
 
 ## Server Requirements
 
