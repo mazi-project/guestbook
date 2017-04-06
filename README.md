@@ -1,12 +1,14 @@
 # MAZI Guest Book
 
+Mazi-board or Guestbook is an application part of the MAZI toolkit for sharing ideas, photos and more, related to the specific place where a MAZI Zone is deployed, a form of digital Guestbook.
+
 ## Server Requirements
 
 * mongodb installed
 * npm installed
 * node installed
 
-## Setup
+## Installation
 
 * go to src/node directory
 * run `npm install`
@@ -38,3 +40,8 @@
 *  standard port for server is 8081, configure nginx or apache to forward http requests on port 80 to node server
 
 
+## Credits
+
+Mazi-board is an application developed initially by https://github.com/lutzer, to complement the Hybrid LetterBox: http://www.design-research-lab.org/projects/hybrid-letter-box/, with a local offline application to view, comment, and add new cards through a device.
+
+As part of the MAZI toolkit is being further developed to be used as a generic application.
