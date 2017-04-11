@@ -237,7 +237,7 @@ define(['exports', 'backbone', 'marionette', 'socketio', 'config', 'views/main_v
                                /*
 				*alert(title + ': ' + message);
                                */
-                                 alert('Please fill in both the Name and Text fields'); 			
+                                 alert('Please fill in both the Name and Text fields. The uploaded image size should not exceed 50MB'); 			
 
 
                          }
