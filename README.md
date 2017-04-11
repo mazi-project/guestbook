@@ -1,6 +1,11 @@
 # MAZI Guestbook
 
-Mazi-board or MAZI Guestbook is an application part of the MAZI toolkit for sharing ideas, photos and more, related to the specific place where a MAZI Zone is deployed, a form of digital Guestbook. See here for more details and documentation: https://github.com/mazi-project/guestbook/wiki
+Mazi-board or MAZI Guestbook is an application part of the MAZI toolkit for sharing ideas, photos and more, related to the specific place where a MAZI Zone is deployed, a form of digital Guestbook. 
+
+See here for more details and documentation: https://github.com/mazi-project/guestbook/wiki
+
+And try it out here: http://demo.mazizone.eu:8081/
+
 
 ## Server Requirements
 
