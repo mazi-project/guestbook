@@ -12,7 +12,7 @@ var httpauth = require('http-auth');
 var basicAuth = httpauth.basic({
     realm: "Admin"
 }, function (username, password, callback) {
-	callback(true);
+//	callback(true);
     callback(username === Config.authName && password === Config.authPassword);
 });
 
