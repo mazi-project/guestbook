@@ -234,10 +234,10 @@ define(['exports', 'backbone', 'marionette', 'socketio', 'config', 'views/main_v
 
 				var title = (type + '-error').toUpperCase();
 				var message = error.message;
-                               /*
-				*alert(title + ': ' + message);
-                               */
-                                 alert('Please fill in both the Name and Text fields. The uploaded image size should not exceed 50MB'); 			
+                               
+				alert(title + ': ' + message);
+                               
+                               //  alert('Please fill in both the Name and Text fields. The uploaded image size should not exceed 50MB'); 			
 
 
                          }
