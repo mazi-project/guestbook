@@ -1,5 +1,8 @@
 <div class="inner-card">
 	<div class="card-header">
+		<% if (title != "false") { %>
+		<h3><%= title %></h3>
+		<% } %>
 	</div>
 	<% if (files.length > 0) { %>
 	<div class="card-image">

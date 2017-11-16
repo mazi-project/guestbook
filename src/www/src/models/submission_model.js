@@ -11,7 +11,6 @@ import Backbone from 'backbone';
 import Config from 'config';
 
 class SubmissionModel extends Backbone.Model {
-
 	get urlRoot() { return Config['web_service_url']+"submissions" }
 
 	get idAttribute() { return '_id' }
@@ -23,7 +22,7 @@ class SubmissionModel extends Backbone.Model {
 	    	text: '',
 	    	tags: [],
 	    	author: '',
-	    	title: false
+			title: false
 		}
 	}
 }

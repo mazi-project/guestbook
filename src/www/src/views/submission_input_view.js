@@ -10,7 +10,7 @@
 import 'jquery';
 import 'iframeTransport';
 import Marionette from 'marionette'
-import Backbone from 'backbone';
+import Backbone, { ajax } from 'backbone';
 import _ from 'underscore'
 import SubmissionModel from 'models/submission_model';
 import Config from 'config';
@@ -37,14 +37,15 @@ class SubmissionInputView extends Marionette.ItemView {
     }
 
     get templateHelpers() {
-        return {
-            tags : Config.tags
-        }
+		return {
+			tags : Config.tags
+		}
+
     }
 
     /* methods */
     initialize(options) {
-        //console.log(options)
+		//console.log(options)
     }
 
     focus() {
