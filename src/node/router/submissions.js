@@ -55,6 +55,19 @@ router.get('/',(req,res) => {
     });
 });
 
+/* 
+ * adkalkan
+ * GET /api/submissions/options
+ */ 
+router.get('/options',(req,res) => {
+	var config = require('../config');
+	res.send({
+		maxFileSize: config.maxFileSize,
+		allowedFileTypes: config.allowedFileTypes
+	});
+});
+
+
 /*
  * GET /api/submissions/:id
  */ 
