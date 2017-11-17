@@ -40,12 +40,21 @@ class SubmissionInputView extends Marionette.ItemView {
 		return {
 			tags : Config.tags
 		}
-
     }
 
     /* methods */
     initialize(options) {
 		//console.log(options)
+		$.ajax({
+			method: 'GET',
+			url: 'api/submissions/options',
+			error: (res) => {
+				this.$('span.size-info').text(5); 		//default value
+			},
+			success: (res) => {
+				this.$('span.size-info').text(res.maxFileSize/1024/1024);
+			}
+		});
     }
 
     focus() {
@@ -81,7 +90,7 @@ class SubmissionInputView extends Marionette.ItemView {
 
         // upload file
         var uploadFile = function(file, model,callback) {
-
+			
             $.ajax({
                 method: 'POST',
                 url: Config.web_service_url+'file/attach/'+model.get('_id'),
@@ -89,11 +98,11 @@ class SubmissionInputView extends Marionette.ItemView {
                 files: file,
                 dataType: 'json',
                 error: (res) => {
-                    Backbone.trigger('error','http',res.responseJSON.error);
+                    Backbone.trigger('error','http',"Unable to upload file");
                 },
                 success: (res) => {
                     if (_.has(res,'error'))
-                        Backbone.trigger('error','http',res.error);
+						Backbone.trigger('error','http',res.error);
                     else
                         callback();
                 }
@@ -111,7 +120,16 @@ class SubmissionInputView extends Marionette.ItemView {
     	})
     	submission.save(null,{
             error: (model,res) => {
-                Backbone.trigger('error','http',res.responseJSON.error);
+				var error = res.responseJSON.error.message;
+				var response_txt = '';
+
+				if(error.includes('author')){
+					response_txt = "Please enter your name.\n";
+				}
+				if(error.includes('text')){
+					response_txt += "Please write a comment.";
+				}
+				alert(response_txt);
             },
             success: (model, res) => {
                 if (this.$('#new-submission-file').val())
