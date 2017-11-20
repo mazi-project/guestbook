@@ -8,6 +8,7 @@ var async = require('async');
 
 var Utils = r_require('/utils/utils');
 var Comment = r_require('/models/comment');
+var Config = r_require('/config');
 
 // Define Model Schema
 var submissionSchema = mongoose.Schema({
@@ -16,7 +17,7 @@ var submissionSchema = mongoose.Schema({
 
     title: { type: String, maxlength: 120 },
     text : { type: String, required: true, maxlength: '1500' },
-    author: { type: String, required: true, maxlength: '60' },
+    author: { type: String, required: Config.submission_name_required, maxlength: '60' },
     device: { type: String, default: false },
     tags : [ { type: String, match: /^\w+$/ } ], //only allow numbers and chars and _ without spaces
     dataset : { type: String, default: 'default'}, //which dataset does this post belong to?

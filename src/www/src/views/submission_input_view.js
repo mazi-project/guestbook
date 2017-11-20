@@ -25,15 +25,27 @@ class SubmissionInputView extends Marionette.ItemView {
     get className() { return 'submission-input' }
 
     events() {
-    	return {
-            'click .submission-headline' : 'focus',
-            'mouseleave' : 'unfocus',
-            'click #submit-button' : 'onSubmitButtonClick',
+		var events = {
+			'click #submit-button' : 'onSubmitButtonClick',
             'change #new-submission-file' : 'onFileInputChanged',
             'click #tag-dropdown' : 'onTagDropdownClick',
             'click .tag-dropdown-list' : 'preventPropagation',
             'mouseleave .tag-dropdown-list' : 'onLeaveDropdown'
-    	}
+		}
+		if(!Config.auto_expand_comment){
+			events['click .submission-headline'] = 'focus';
+			events['mouseleave'] = 'unfocus';
+		}
+    	// return {
+        //     // 'click .submission-headline' : 'focus',
+        //     // 'mouseleave' : 'unfocus',
+        //     'click #submit-button' : 'onSubmitButtonClick',
+        //     'change #new-submission-file' : 'onFileInputChanged',
+        //     'click #tag-dropdown' : 'onTagDropdownClick',
+        //     'click .tag-dropdown-list' : 'preventPropagation',
+        //     'mouseleave .tag-dropdown-list' : 'onLeaveDropdown'
+		// }
+		return events;
     }
 
     get templateHelpers() {
@@ -44,7 +56,6 @@ class SubmissionInputView extends Marionette.ItemView {
 
     /* methods */
     initialize(options) {
-		//console.log(options)
 		$.ajax({
 			method: 'GET',
 			url: 'api/submissions/options',
@@ -55,6 +66,9 @@ class SubmissionInputView extends Marionette.ItemView {
 				this.$('span.size-info').text(res.maxFileSize/1024/1024);
 			}
 		});
+
+		if(Config.auto_expand_comment)
+			this.$el.addClass('expand');
     }
 
     focus() {
@@ -134,13 +148,19 @@ class SubmissionInputView extends Marionette.ItemView {
             success: (model, res) => {
                 if (this.$('#new-submission-file').val())
                     uploadFile(this.$('#new-submission-file'),model, () => {
-                        this.clear();
-                        this.unfocus();
+                        // this.clear();
                     });
-                else {
-                    this.clear();
-                    this.unfocus();
-                }
+                // else {
+					// this.clear();
+				// }
+				this.clear();
+				if(Config.auto_expand_comment)
+					$('html, body').animate({
+						scrollTop: $('div#submission-list').offset().top
+					}, 2000);
+				else
+					this.unfocus();
+				
             }
         });
     }

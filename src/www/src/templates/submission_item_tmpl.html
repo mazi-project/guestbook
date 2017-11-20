@@ -14,7 +14,9 @@
 	</div>
 	<% } %>
 	<div class="card-bottom">
-		<p class="author">by <%= author %></p>
+		<% if(author) { %>
+			<p class="author">by <%= author %></p>
+		<% } %>
 		<p class="date"><%= fromNow(createdAt) %></p>
 		<!--<span class="comment-number"><%= comments.length %> Comments</div>-->
 		<% if (tags.length > 0) { %>
