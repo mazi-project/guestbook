@@ -14,7 +14,22 @@ import _ from 'underscore';
 import SubmissionCollection from 'models/submission_collection';
 import AdminItemView from 'views/admin_item_view';
 import template from 'text!templates/admin_tmpl.html';
+import Config from 'config'
 
+
+var login_fun = function(cb){
+	$.ajax({
+		method: 'GET',
+		url: Config['web_service_url']+"admin",
+		error: function(err) {
+			console.log(err);
+		},
+		success: function success(res) {
+			console.log('success');
+			cb();
+		}
+	});
+}
 class AdminView extends Marionette.CompositeView {
 
 	/* properties */
@@ -28,15 +43,16 @@ class AdminView extends Marionette.CompositeView {
 
     /* methods */
     initialize(options) {
+		login_fun(); //Auth
 
-    	this.collection = new SubmissionCollection();
+		this.collection = new SubmissionCollection();
 
-        this.listenTo(this.collection,'sync',this.hideSpinner);
-        this.listenTo(this.collection,'fetching',this.showSpinner);
+		this.listenTo(this.collection,'sync',this.hideSpinner);
+		this.listenTo(this.collection,'fetching',this.showSpinner);
 
-    	this.collection.getFirstPage();
+		this.collection.getFirstPage();
 
-        this.listenTo(Backbone,'submission:changed', this.onSubmissionChanged);
+		this.listenTo(Backbone,'submission:changed', this.onSubmissionChanged);
     }
 
     onAttach() {

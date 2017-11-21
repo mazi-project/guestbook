@@ -13,6 +13,21 @@ import Config from 'config';
 import moment from 'moment';
 import template from 'text!templates/admin_item_tmpl.html';
 import CommentModel from 'models/comment_model';
+import $ from 'jquery';
+
+var login_fun = function(cb){
+	$.ajax({
+		method: 'GET',
+		url: Config['web_service_url']+"admin",
+		error: function(err) {
+			console.log(err);
+		},
+		success: function success(res) {
+			console.log('success');
+			cb();
+		}
+	});
+}
 
 class AdminItemView extends Marionette.ItemView {
 
@@ -54,22 +69,28 @@ class AdminItemView extends Marionette.ItemView {
     }
 
     onExpandButtonClick() {
-    	this.$('#admin-comments-list').toggleClass('hidden');
+		var _this = this;
+		login_fun(function(){
+			_this.$('#admin-comments-list').toggleClass('hidden');
+		});
     }
 
     onDeleteCommentButtonClick(event) {
-
-      var commentId = $(event.target).attr('data-id')
-      var comment = new CommentModel({
-        _id : commentId
-      });
-      comment.destroy();
+		login_fun(function(){
+			var commentId = $(event.target).attr('data-id')
+			var comment = new CommentModel({
+				_id : commentId
+			});
+			comment.destroy();
+		});
     }
 
     onDeleteSubmissionButtonClick() {
-        this.model.destroy();
+		var _this = this;
+		login_fun(function(){
+			_this.model.destroy();
+		});
     }
-    
 }
 
 export default AdminItemView
