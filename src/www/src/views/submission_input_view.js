@@ -36,21 +36,13 @@ class SubmissionInputView extends Marionette.ItemView {
 			events['click .submission-headline'] = 'focus';
 			events['mouseleave'] = 'unfocus';
 		}
-    	// return {
-        //     // 'click .submission-headline' : 'focus',
-        //     // 'mouseleave' : 'unfocus',
-        //     'click #submit-button' : 'onSubmitButtonClick',
-        //     'change #new-submission-file' : 'onFileInputChanged',
-        //     'click #tag-dropdown' : 'onTagDropdownClick',
-        //     'click .tag-dropdown-list' : 'preventPropagation',
-        //     'mouseleave .tag-dropdown-list' : 'onLeaveDropdown'
-		// }
 		return events;
     }
 
     get templateHelpers() {
 		return {
-			tags : Config.tags
+			tags : Config.tags,
+			welcome_msg: Config.welcome_msg
 		}
     }
 
@@ -146,13 +138,9 @@ class SubmissionInputView extends Marionette.ItemView {
 				alert(response_txt);
             },
             success: (model, res) => {
-                if (this.$('#new-submission-file').val())
-                    uploadFile(this.$('#new-submission-file'),model, () => {
-                        // this.clear();
-                    });
-                // else {
-					// this.clear();
-				// }
+				if(this.$('#new-submission-file').val())
+					uploadFile(this.$('#new-submission-file'),model, () => {});
+				
 				this.clear();
 				if(Config.auto_expand_comment)
 					$('html, body').animate({
@@ -160,7 +148,6 @@ class SubmissionInputView extends Marionette.ItemView {
 					}, 2000);
 				else
 					this.unfocus();
-				
             }
         });
     }

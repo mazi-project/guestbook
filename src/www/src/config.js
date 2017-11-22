@@ -22,6 +22,6 @@ export default {
 	// Tags
 	tags: ['tag1','tag2','tag3','tag4'],
 	background_img: "TODO",
-	welcome_msg: "TODO",
+	welcome_msg: "Click here to comment on the MAZI toolkit",
 	auto_expand_comment: false,			// 'Click here to comment' no longer exists. It collapses by default
 }
