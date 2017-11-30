@@ -45,12 +45,6 @@ module.exports = function (app) {
         app.use(Config.baseUrl+'files/',express.static(Config.fileDir,publicOptions));
     }
 
-	app.use(function(req,res,next){
-		console.log(req.originalUrl);
-		next();
-	});
-
-
 	var Auth = r_require('/router/_authentification');
 	app.get(Config.baseUrl+'api/admin',Auth.authentificate, function(req,res){
 		res.sendStatus(200);

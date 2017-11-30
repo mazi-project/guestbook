@@ -6,7 +6,6 @@ This directory contains the frontend javascript backbone web app
 
 * run `npm install` to install dependencies
 * run `sudo apt-get install ruby` to install Ruby
-* run `sudo apt-get install ruby-all-dev` to install Ruby headers (required for compass)
 * run `sudo apt-get install ruby-compass` to install compass
 
 ## Build
