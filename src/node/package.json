@@ -1,6 +1,6 @@
 {
-  "name": "HybridLetterbox",
-  "version": "0.0.1",
+  "name": "MAZI Guestbook",
+  "version": "0.1",
   "dependencies": {
     "async": "^1.5.2",
     "body-parser": "^1.14.0",
