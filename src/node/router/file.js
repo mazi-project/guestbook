@@ -36,7 +36,7 @@ router.post('/attach/:submissionId', fileUploader, function(req,res){
             Utils.handleError({ message: 'No file submitted.' },res);
             return;
         }
-
+		
         var file = req.files.file;
         
         //check file size

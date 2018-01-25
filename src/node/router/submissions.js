@@ -83,7 +83,15 @@ router.get('/:id',(req,res) => {
  * POST /api/submissions/
  */ 
 router.post('/', (req, res) => {
-
+	var config = require('../config');
+	if (req.body.text == '') {
+		Utils.handleError({ message: 'Text not found' },res);
+		return;
+	}
+	if (req.body.author == '' && config.submission_name_required) {
+		Utils.handleError({ message: 'Author not found' },res);
+		return;
+	}
     var submission = new Submission(req.body);
     
     //only allow new comments
