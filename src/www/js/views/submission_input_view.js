@@ -189,13 +189,13 @@ define(['exports', 'marionette', 'backbone', 'underscore', 'models/submission_mo
         });
         submission.save(null, {
           error: function error(model, res) {
-            var error = res.responseJSON.error.message;
+            var error = res.responseJSON.error.errors;
             var response_txt = '';
 
-            if (error.includes('author')) {
+            if (error.author) {
               response_txt = "Please enter your name.\n";
             }
-            if (error.includes('text')) {
+            if (error.text) {
               response_txt += "Please write a comment.";
             }
             alert(response_txt);
